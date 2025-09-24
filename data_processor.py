@@ -11,7 +11,7 @@ import google.generativeai as genai
 # IMPORTANT: Set your Google AI Studio API Key via environment variable.
 # Do NOT hard-code secrets in source code. Use a .env file (ignored by git) or
 # set it in your shell: $env:GOOGLE_API_KEY = "your-key" on PowerShell
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
+GOOGLE_API_KEY = os.getenv("AIzaSyBkc8uUrzuc8pULQxZusn9AlDekWrRFPkI"
 # --- (Keep the rest of your metadata and manual_entities the same) ---
 
 

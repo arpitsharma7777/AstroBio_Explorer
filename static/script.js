@@ -9,8 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle the search form submission
     searchForm.addEventListener('submit', async (event) => {
         event.preventDefault();
-        const keyword = searchInput.value;
-        if (!keyword) return;
+        const keyword = searchInput.value || '';
 
     resultsContainer.innerHTML = '<p style="color:#666">Searching…</p>';
 
@@ -23,6 +22,19 @@ document.addEventListener('DOMContentLoaded', () => {
             resultsContainer.innerHTML = '<p style="color:#b91c1c">Error during search. Please try again.</p>';
         }
     });
+
+    // Load default results on first load (empty keyword)
+    (async () => {
+        try {
+            const response = await fetch('/api/search?keyword=');
+            const papers = await response.json();
+            if (Array.isArray(papers) && papers.length > 0) {
+                displayResults(papers);
+            }
+        } catch (e) {
+            // Non-fatal: ignore initial load errors
+        }
+    })();
 
     // Function to display the search results as cards
     function displayResults(papers) {
