@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d0" for="node" attr.name="label" attr.type="string"/>
+  <key id="d1" for="node" attr.name="type" attr.type="string"/>
+  <key id="d2" for="node" attr.name="mission" attr.type="string"/>
+  <key id="d3" for="node" attr.name="year" attr.type="string"/>
+  <key id="d4" for="node" attr.name="summary_objective" attr.type="string"/>
+  <key id="d5" for="node" attr.name="summary_key_result" attr.type="string"/>
+  <key id="d6" for="node" attr.name="summary_why_it_matters" attr.type="string"/>
+  <key id="d7" for="node" attr.name="pdf_link" attr.type="string"/>
+  <key id="d8" for="node" attr.name="gene_lab_url" attr.type="string"/>
+  <graph id="G" edgedefault="undirected">
+    <!-- A publication node -->
+    <node id="pub1">
+      <data key="d0">Spaceflight-induced muscle atrophy</data>
+      <data key="d1">Publication</data>
+      <data key="d2">ISS</data>
+      <data key="d3">2021</data>
+      <data key="d4">Study objective on muscle atrophy in microgravity.</data>
+      <data key="d5">Key result shows reduction in muscle mass.</data>
+      <data key="d6">Matters for astronaut health and long-duration missions.</data>
+      <data key="d7">https://example.com/paper.pdf</data>
+      <data key="d8">https://genelab-data.example.com/dataset</data>
+    </node>
+    <!-- Entities connected to the publication -->
+    <node id="gene_myostatin">
+      <data key="d0">Myostatin</data>
+      <data key="d1">Gene</data>
+    </node>
+    <node id="process_atrophy">
+      <data key="d0">Atrophy</data>
+      <data key="d1">Biological Process</data>
+    </node>
+    <node id="organ_muscle">
+      <data key="d0">Skeletal Muscle</data>
+      <data key="d1">Organ</data>
+    </node>
+    <!-- Edges -->
+    <edge source="pub1" target="gene_myostatin" />
+    <edge source="pub1" target="process_atrophy" />
+    <edge source="pub1" target="organ_muscle" />
+  </graph>
+</graphml>

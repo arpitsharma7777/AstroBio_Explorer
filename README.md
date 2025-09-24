@@ -43,11 +43,17 @@ Then open http://127.0.0.1:5000/ in your browser.
 - `static/style.css`, `static/script.js` – UI styles and logic
 - `data_processor.py` – Script to build `knowledge_graph.graphml` (uses Google Gemini optionally)
 - `knowledge_graph.graphml` – Generated graph data (ignored by git)
+- `sample_graph.graphml` – Small sample graph for demos (auto-loaded if main graph missing)
 - `data/` – Source texts (ignored by git)
 
 ## Notes
 - Secrets should be provided via environment variables, not committed.
-- The app expects `knowledge_graph.graphml` to exist; run `data_processor.py` to regenerate it.
+- The app tries to load `knowledge_graph.graphml` first; if missing, it falls back to `sample_graph.graphml` so the UI has data to display.
+- You can override the graph path via env var:
+
+```powershell
+$env:GRAPH_PATH = "path/to/your/graph.graphml"
+```
 
 ## License
 MIT

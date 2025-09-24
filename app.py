@@ -6,10 +6,14 @@ app = Flask(__name__)
 
 # Load the knowledge graph when the application starts, with a safe fallback
 GRAPH_PATH = os.getenv("GRAPH_PATH", "knowledge_graph.graphml")
+FALLBACK_GRAPH_PATH = "sample_graph.graphml"
 try:
     G = nx.read_graphml(GRAPH_PATH)
 except Exception:
-    G = nx.Graph()
+    try:
+        G = nx.read_graphml(FALLBACK_GRAPH_PATH)
+    except Exception:
+        G = nx.Graph()
 
 @app.route('/')
 def index():
