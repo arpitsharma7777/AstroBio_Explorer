@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+.DS_Store
+
+# Flask
+instance/
+
+# VS Code
+.vscode/
+
+# Data and artifacts
+knowledge_graph.graphml
+/data/*
+
+# Logs
+*.log

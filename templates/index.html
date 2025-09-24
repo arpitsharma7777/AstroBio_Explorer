@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AstroBioExplorer - Knowledge Engine</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>AstroBioExplorer: Space Biology Knowledge Engine</h1>
+    </header>
+
+    <div class="container">
+        <div class="column" id="left-column">
+            <div id="search-area">
+                <form id="search-form" role="search" aria-label="Search publications">
+                    <input type="text" id="search-input" placeholder="Search by keyword..." aria-label="Search input" autocomplete="on">
+                    <button type="submit" aria-label="Search button">Search</button>
+                </form>
+            </div>
+            <div id="results-container" aria-live="polite" role="region">
+                <p>Enter a search term like "atrophy" or "myostatin" to begin.</p>
+            </div>
+        </div>
+
+        <div class="column" id="right-column">
+            <div id="details-panel">
+                <h2>Select a Publication to View Details</h2>
+                <p>Click on a search result card to see its summary, data links, and its connections in the knowledge graph.</p>
+            </div>
+            <div id="graph-container" aria-label="Knowledge graph visualization" role="img"></div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

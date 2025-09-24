@@ -1,0 +1,5 @@
+Flask>=2.3.0
+gunicorn>=21.2.0
+networkx>=3.0
+lxml>=4.9.0
+google-generativeai>=0.7.0
